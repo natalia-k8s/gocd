@@ -1,5 +1,7 @@
 FROM golang:1.20 as build-stage
 
+LABEL org.opencontainers.image.source=https://github.com/natalia-k8s/gocd
+
 WORKDIR /app
 
 COPY go.mod go.sum ./
