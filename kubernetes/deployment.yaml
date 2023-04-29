@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gocd
+  labels:
+    app: gocd-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gocd-app
+  template:
+    metadata:
+      labels:
+        app: gocd-app
+    spec:
+      containers:
+      - name: gocd
+        image: ghcr.io/natalia-k8s/gocd:latest
